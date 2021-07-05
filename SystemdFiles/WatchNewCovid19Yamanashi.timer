@@ -1,0 +1,9 @@
+[Unit]
+Description=WatchNewCovid19Yamanashi
+
+[Timer]
+Unit=WatchNewCovid19Yamanashi.service
+OnUnitActiveSec=10min
+
+[Install]
+WantedBy=timers.target

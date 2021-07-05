@@ -3,3 +3,4 @@ venv
 logs
 .env
 notified_ids.json
+*.pyc
