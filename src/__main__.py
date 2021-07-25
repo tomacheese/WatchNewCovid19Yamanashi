@@ -9,11 +9,13 @@ def main():
     notified_ids = load_notified_ids()
     isFirst = len(notified_ids) == 0
 
-    items = get_all_corona_list_pages()
+    items: dict = get_all_corona_list_pages()
+    item_values = sorted(items.values(), reverse=True)
     fields = []
     nums = {}
-    for o in items.values():
-        for item in o.values():
+    for o in item_values:
+        o_values = sorted(o.values(), reverse=True)
+        for item in o_values:
             title = item["title"]
             num = item["num"]
 
@@ -42,6 +44,7 @@ def main():
                     "fields": fields
                 }
                 send_to_discord(config.DISCORD_TOKEN, config.DISCORD_CHANNEL_ID, "", embed)
+                fields = []
             add_notified_id(title)
 
     if not isFirst and len(fields) > 0:
