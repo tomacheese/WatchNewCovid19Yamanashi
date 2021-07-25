@@ -10,12 +10,10 @@ def main():
     isFirst = len(notified_ids) == 0
 
     items: dict = get_all_corona_list_pages()
-    item_values = sorted(items.values(), reverse=True)
     fields = []
     nums = {}
-    for o in item_values:
-        o_values = sorted(o.values(), reverse=True)
-        for item in o_values:
+    for o in reversed(list(items.values())):
+        for item in reversed(list(o.values())):
             title = item["title"]
             num = item["num"]
 
