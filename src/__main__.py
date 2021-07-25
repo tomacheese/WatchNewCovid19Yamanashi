@@ -31,7 +31,7 @@ def main():
             print("\n".join(htmls))
 
             fields.append({
-                "name": (":new:" if num == 1 else ":up:") + title,
+                "name": (":new:" if num == "1" else ":up:") + title,
                 "value": "\n".join(htmls)
             })
             if num not in nums:
