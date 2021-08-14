@@ -3,6 +3,7 @@ Description=WatchNewCovid19Yamanashi
 
 [Timer]
 Unit=WatchNewCovid19Yamanashi.service
+OnBootSec=10min
 OnUnitActiveSec=10min
 
 [Install]
